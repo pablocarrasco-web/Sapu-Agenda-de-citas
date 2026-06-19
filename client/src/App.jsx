@@ -20,7 +20,7 @@ import {
   FileText
 } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = `${import.meta.env.VITE_API_URL}/api`;
 
 export default function App() {
   const [view, setView] = useState('client'); // 'client' | 'admin'
@@ -1389,7 +1389,7 @@ export default function App() {
             {adminTab === 'reports' && (
               <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }} className="grid-cols-dashboard">
-                  
+
                   {/* Tarjeta 1: Reporte General */}
                   <div className="glass-card" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '1.5rem' }}>
                     <div>
@@ -1401,8 +1401,8 @@ export default function App() {
                         Descarga la nómina completa de pacientes registrados junto con el historial de sus citas médicas, correos de contacto, teléfonos, edad y estados de agendamiento.
                       </p>
                     </div>
-                    <button 
-                      className="btn btn-primary" 
+                    <button
+                      className="btn btn-primary"
                       onClick={() => window.open(`${API_BASE}/reports/general/csv`, '_blank')}
                       style={{ width: '100%', gap: '0.5rem', height: '44px' }}
                     >
@@ -1422,8 +1422,8 @@ export default function App() {
                         Descarga el análisis estadístico consolidado que detalla la cantidad de pacientes que toman cada tipo de cita cruzado por su rango de edad (Niño, Adulto, Adulto Mayor) e identifica las mayores demandas.
                       </p>
                     </div>
-                    <button 
-                      className="btn btn-secondary" 
+                    <button
+                      className="btn btn-secondary"
                       onClick={() => window.open(`${API_BASE}/reports/demographics/csv`, '_blank')}
                       style={{ width: '100%', gap: '0.5rem', height: '44px', borderColor: 'var(--color-primary-light)', color: 'var(--color-primary-light)', background: 'var(--color-primary-glow)' }}
                     >
@@ -1436,7 +1436,7 @@ export default function App() {
 
                 {/* Previsualizaciones */}
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2rem' }}>
-                  
+
                   {/* Vista Previa: Distribución de Citas por Motivo y Edad */}
                   <div className="glass-card" style={{ padding: '2rem' }}>
                     <h4 style={{ fontSize: '1.25rem', color: 'var(--text-dark)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -1461,8 +1461,8 @@ export default function App() {
                         <tbody>
                           {(() => {
                             const motives = [
-                              "Consulta General", "Control Niño Sano", "Control Cardiovascular", 
-                              "Control Crónicos", "Vacunación", "Urgencia Respiratoria", 
+                              "Consulta General", "Control Niño Sano", "Control Cardiovascular",
+                              "Control Crónicos", "Vacunación", "Urgencia Respiratoria",
                               "Atención Dental", "Otros"
                             ];
                             appointments.forEach(appt => {
