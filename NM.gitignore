@@ -1,0 +1,9 @@
+# Bloquear node_modules en cualquier parte del proyecto
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Bloquear archivos de variables de entorno locales
+.env
+client/.env
+server/.env

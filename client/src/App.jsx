@@ -20,7 +20,7 @@ import {
   FileText
 } from 'lucide-react';
 
-const API_BASE = `${import.meta.env.VITE_API_URL}/api`;
+const API_BASE = 'https://sapu-backend.onrender.com/api';
 
 export default function App() {
   const [view, setView] = useState('client'); // 'client' | 'admin'
